@@ -2,6 +2,11 @@
 
 internal static class FileSystemService
 {
+    internal static string GetDataFilePath(string day, string dataFile)
+    {
+        return $"{AppSettingConstants.BaseDirectory}/{AppSettingConstants.DataDirectory}/{day}/{dataFile}";
+    }
+
     internal static void CreateFile(string path)
     {
         if (!File.Exists(path))
@@ -12,7 +17,10 @@ internal static class FileSystemService
 
     internal static void CreateFile(string path, string content)
     {
-        File.WriteAllText(path, content);
+        if (!File.Exists(path))
+        {
+            File.WriteAllText(path, content);
+        }
     }
 
     internal static string GetFileContent(string path)

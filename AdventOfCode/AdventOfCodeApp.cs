@@ -41,7 +41,7 @@ internal class AdventOfCodeApp
             {
                 var resultFile = Path.Combine(AppSettingConstants.BaseDirectory,
                     $"{AppSettingConstants.DataDirectory}/{_dayToRun}/Result1.txt");
-                FileSystemService.CreateFile(resultFile);
+                FileSystemService.CreateFile(resultFile, message);
             }
         }
         catch (Exception e)
@@ -52,14 +52,14 @@ internal class AdventOfCodeApp
         try
         {
             Console.WriteLine("Attempt to run second problem.");
-            var result = service.FirstProblem();
+            var result = service.SecondProblem();
             var message = $"Answer to second problem:\n '{result}'";
             Console.WriteLine(message);
             if (_writeResultToFile)
             {
                 var resultFile = Path.Combine(AppSettingConstants.BaseDirectory,
                     $"{AppSettingConstants.DataDirectory}/{_dayToRun}/Result2.txt");
-                FileSystemService.CreateFile(resultFile);
+                FileSystemService.CreateFile(resultFile, message);
             }
         }
         catch (Exception e)

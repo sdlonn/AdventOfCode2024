@@ -46,7 +46,7 @@ public class Day1 : IService
         return amount.ToString();
     }
 
-    private Day1Wrapper GetNumbers()
+    private static Day1Wrapper GetNumbers()
     {
         var inputNumbers =
             FileSystemService.GetFileContentRows(FileSystemService.GetDataFilePath(1, AppSettingConstants.DataFile1));

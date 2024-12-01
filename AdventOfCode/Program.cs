@@ -34,7 +34,7 @@ internal class Program
             var implementationName = implementation.Name;
             serviceProvider.AddKeyedTransient<IService>(
                 implementationName,
-                (a, b) => (IService)Activator.CreateInstance(implementation));
+                (a, b) => (IService)Activator.CreateInstance(implementation)!);
         }
 
         return serviceProvider.BuildServiceProvider();

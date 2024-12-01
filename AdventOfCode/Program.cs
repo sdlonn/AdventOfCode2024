@@ -1,5 +1,4 @@
-﻿using AdventOfCode.Service;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using AdventOfCode.Service.FileSystem;
 using AdventOfCode.Service.Interface;

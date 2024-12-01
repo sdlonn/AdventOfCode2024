@@ -2,7 +2,7 @@
 
 internal static class FileSystemService
 {
-    internal static string GetDataFilePath(string day, string dataFile)
+    internal static string GetDataFilePath(int day, string dataFile)
     {
         return $"{AppSettingConstants.BaseDirectory}/{AppSettingConstants.DataDirectory}/{day}/{dataFile}";
     }

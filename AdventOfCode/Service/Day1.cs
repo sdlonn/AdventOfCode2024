@@ -49,7 +49,7 @@ public class Day1 : IService
     private Day1Wrapper GetNumbers()
     {
         var inputNumbers =
-            FileSystemService.GetFileContentRows(FileSystemService.GetDataFilePath("1", AppSettingConstants.DataFile1));
+            FileSystemService.GetFileContentRows(FileSystemService.GetDataFilePath(1, AppSettingConstants.DataFile1));
         var left = new List<int>();
         var right = new List<int>();
 

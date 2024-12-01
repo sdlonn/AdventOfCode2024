@@ -20,6 +20,11 @@ internal static class FileSystemService
         return File.ReadAllText(path);
     }
 
+    internal static string[] GetFileContentRows(string path)
+    {
+        return File.ReadAllLines(path);
+    }
+
     internal static void CreateDirectoryIfNotExists(string directoryPath)
     {
         if (!Directory.Exists(directoryPath))

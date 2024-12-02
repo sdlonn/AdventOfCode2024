@@ -1,8 +1,5 @@
 using AdventOfCode.Service.FileSystem;
 using AdventOfCode.Service.Interface;
-using AdventOfCode.Service.ServiceModels;
-using Microsoft.VisualBasic;
-using System.Collections.Generic;
 
 namespace AdventOfCode.Service;
 
@@ -26,7 +23,7 @@ public class Day2 : IService
         return GetNumbers().LongCount(numbers => IsSafe(numbers) || IsSafeIfRemove(numbers)).ToString();
     }
 
-    private bool IsSafeIfRemove(IReadOnlyCollection<int> ls)
+    private static bool IsSafeIfRemove(IReadOnlyCollection<int> ls)
     {
         for (var i = 0; i < ls.Count; i++)
         {
@@ -41,7 +38,7 @@ public class Day2 : IService
         return false;
     }
 
-    private bool IsSafe(int[] numbers)
+    private static bool IsSafe(int[] numbers)
     {
         if (numbers.Length < 2)
         {
@@ -73,7 +70,7 @@ public class Day2 : IService
         return inputNumbers.Select(number => number.Split(" ").Select(x => int.Parse(x.Trim())).ToArray());
     }
 
-    private bool CompareNumbers(Direction direction, IReadOnlyList<int> numbers, int index)
+    private static bool CompareNumbers(Direction direction, IReadOnlyList<int> numbers, int index)
     {
         var a = numbers[index];
         var b = numbers[index + 1];

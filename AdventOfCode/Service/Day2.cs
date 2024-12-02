@@ -83,13 +83,11 @@ public class Day2 : IService
             return false;
         }
 
-        switch (direction)
+        return direction switch
         {
-            case Direction.Ascending when a > b:
-            case Direction.Descending when b > a:
-                return false;
-            default:
-                return true;
-        }
+            Direction.Ascending when a > b => false,
+            Direction.Descending when b > a => false,
+            _ => true
+        };
     }
 }
